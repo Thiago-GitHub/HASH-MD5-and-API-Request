@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+button, select {
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+#playerDetails { 
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.player-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.player-card {
+    width: calc(25% - 20px);
+    max-height: 600px;
+    height: 50%;
+    margin: 10px;
+    padding: 10px;
+    border: 4px solid #ffffff;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .player-card {
+        width: calc(100% - 20px);
+    }
+
+    select {
+        width: 80%;
+        margin: 10px auto;
+        display: inline-block;
+    }
+
+    button {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .player-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .player-card {
+        width: calc(25% - 20px);
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .player-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

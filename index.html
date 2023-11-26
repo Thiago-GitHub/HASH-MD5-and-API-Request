@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Senha</title>
+    <script type="text/javascript" src="./script/md5.js"></script>
+    <link rel="stylesheet" href="./style/password.css">
+</head>
+<body>
+<br>
+<div class="left-content">
+    <h3>Atletas do Botafogo em 2023-2</h3>
+    <h4>Criado com objetivos exclusivamente didáticos para a disciplina Desenvolvimento Web do Ibmec Rio.</h4>
+    <!-- Outro conteúdo relacionado à esquerda, se necessário -->
+</div>
+    <form id="senhaForm">
+        <label for="senhaInput">SENHA</label>
+        <input type="password" id="senhaInput" name="senhaInput">
+        <button type="button" onclick="verificarSenha()">Verificar Senha</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarSenha() {
+            var senhaDigitada = document.getElementById("senhaInput").value;
+            var senhaMD5 = calcularMD5(senhaDigitada);
+
+            var senhaCorretaMD5 = "85ee0fe4f155a9af2657d85054ad63ca"; 
+
+            if (senhaMD5 === senhaCorretaMD5) {
+                window.location.href = "jogadores.html";
+                alert("A senha está correta. Redirecionando...");
+            } else {
+                exibirMensagemErro("Senha incorreta! Tente novamente.");
+            }
+        }
+
+        function calcularMD5(senha) {
+            return hex_md5(senha);
+        }
+
+        function exibirMensagemErro(mensagem) {
+            document.getElementById("resultado").innerText = mensagem;
+            alert("Algo deu errado. " + mensagem);
+        }
+    </script>
+
+</body>
+</html>

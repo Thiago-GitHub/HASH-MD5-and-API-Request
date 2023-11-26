@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes de Jogadores</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="filtrarAtletas('all')">Todos</button>
+        <button onclick="filtrarAtletas('masculino')">Masculino</button>
+        <button onclick="filtrarAtletas('feminino')">Feminino</button>
+        <select onchange="filtrarAtletas(this.value)">
+            <option value="all">Todos</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+    </div>
+    <div id= "player-test"> </div>
+    <div id="playerDetails"></div>
+
+    <script src="script/script.js"></script>
+    <script>
+        window.onload = loadDefaultCategory;
+    </script>
+</body>
+</html>
